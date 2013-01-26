@@ -37,20 +37,20 @@
 		E989271816B37108006EA6FF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		E989271A16B37108006EA6FF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E989271C16B37108006EA6FF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		E989272016B37108006EA6FF /* Flashcards-Info.plist */ = {isa = PBXFileReference; path = "Flashcards-Info.plist"; sourceTree = "<group>"; };
+		E989272016B37108006EA6FF /* Flashcards-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Flashcards-Info.plist"; sourceTree = "<group>"; };
 		E989272216B37108006EA6FF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E989272416B37108006EA6FF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		E989272616B37108006EA6FF /* Flashcards-Prefix.pch */ = {isa = PBXFileReference; path = "Flashcards-Prefix.pch"; sourceTree = "<group>"; };
-		E989272716B37108006EA6FF /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		E989272616B37108006EA6FF /* Flashcards-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Flashcards-Prefix.pch"; sourceTree = "<group>"; };
+		E989272716B37108006EA6FF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E989272816B37108006EA6FF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		E989272B16B37108006EA6FF /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		E989272D16B37108006EA6FF /* ViewController.h */ = {isa = PBXFileReference; path = ViewController.h; sourceTree = "<group>"; };
+		E989272D16B37108006EA6FF /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		E989272E16B37108006EA6FF /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		E989273516B37108006EA6FF /* FlashcardsTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlashcardsTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E989273616B37108006EA6FF /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		E989273E16B37108006EA6FF /* FlashcardsTests-Info.plist */ = {isa = PBXFileReference; path = "FlashcardsTests-Info.plist"; sourceTree = "<group>"; };
+		E989273E16B37108006EA6FF /* FlashcardsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FlashcardsTests-Info.plist"; sourceTree = "<group>"; };
 		E989274016B37108006EA6FF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		E989274216B37108006EA6FF /* FlashcardsTests.h */ = {isa = PBXFileReference; path = FlashcardsTests.h; sourceTree = "<group>"; };
+		E989274216B37108006EA6FF /* FlashcardsTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlashcardsTests.h; sourceTree = "<group>"; };
 		E989274316B37108006EA6FF /* FlashcardsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlashcardsTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
