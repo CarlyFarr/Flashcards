@@ -1,0 +1,446 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E989271916B37108006EA6FF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E989271816B37108006EA6FF /* UIKit.framework */; };
+		E989271B16B37108006EA6FF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E989271A16B37108006EA6FF /* Foundation.framework */; };
+		E989271D16B37108006EA6FF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E989271C16B37108006EA6FF /* CoreGraphics.framework */; };
+		E989272316B37108006EA6FF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E989272116B37108006EA6FF /* InfoPlist.strings */; };
+		E989272516B37108006EA6FF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E989272416B37108006EA6FF /* main.m */; };
+		E989272916B37108006EA6FF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E989272816B37108006EA6FF /* AppDelegate.m */; };
+		E989272C16B37108006EA6FF /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E989272A16B37108006EA6FF /* MainStoryboard.storyboard */; };
+		E989272F16B37108006EA6FF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E989272E16B37108006EA6FF /* ViewController.m */; };
+		E989273716B37108006EA6FF /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E989273616B37108006EA6FF /* SenTestingKit.framework */; };
+		E989273816B37108006EA6FF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E989271816B37108006EA6FF /* UIKit.framework */; };
+		E989273916B37108006EA6FF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E989271A16B37108006EA6FF /* Foundation.framework */; };
+		E989274116B37108006EA6FF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E989273F16B37108006EA6FF /* InfoPlist.strings */; };
+		E989274416B37108006EA6FF /* FlashcardsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E989274316B37108006EA6FF /* FlashcardsTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E989273A16B37108006EA6FF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E989270B16B37108006EA6FF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E989271316B37108006EA6FF;
+			remoteInfo = Flashcards;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		E989271416B37108006EA6FF /* Flashcards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flashcards.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E989271816B37108006EA6FF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		E989271A16B37108006EA6FF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		E989271C16B37108006EA6FF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		E989272016B37108006EA6FF /* Flashcards-Info.plist */ = {isa = PBXFileReference; path = "Flashcards-Info.plist"; sourceTree = "<group>"; };
+		E989272216B37108006EA6FF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E989272416B37108006EA6FF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E989272616B37108006EA6FF /* Flashcards-Prefix.pch */ = {isa = PBXFileReference; path = "Flashcards-Prefix.pch"; sourceTree = "<group>"; };
+		E989272716B37108006EA6FF /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		E989272816B37108006EA6FF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		E989272B16B37108006EA6FF /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		E989272D16B37108006EA6FF /* ViewController.h */ = {isa = PBXFileReference; path = ViewController.h; sourceTree = "<group>"; };
+		E989272E16B37108006EA6FF /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		E989273516B37108006EA6FF /* FlashcardsTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlashcardsTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E989273616B37108006EA6FF /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		E989273E16B37108006EA6FF /* FlashcardsTests-Info.plist */ = {isa = PBXFileReference; path = "FlashcardsTests-Info.plist"; sourceTree = "<group>"; };
+		E989274016B37108006EA6FF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E989274216B37108006EA6FF /* FlashcardsTests.h */ = {isa = PBXFileReference; path = FlashcardsTests.h; sourceTree = "<group>"; };
+		E989274316B37108006EA6FF /* FlashcardsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlashcardsTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E989271116B37108006EA6FF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E989271916B37108006EA6FF /* UIKit.framework in Frameworks */,
+				E989271B16B37108006EA6FF /* Foundation.framework in Frameworks */,
+				E989271D16B37108006EA6FF /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E989273116B37108006EA6FF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E989273716B37108006EA6FF /* SenTestingKit.framework in Frameworks */,
+				E989273816B37108006EA6FF /* UIKit.framework in Frameworks */,
+				E989273916B37108006EA6FF /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E989270916B37108006EA6FF = {
+			isa = PBXGroup;
+			children = (
+				E989271E16B37108006EA6FF /* Flashcards */,
+				E989273C16B37108006EA6FF /* FlashcardsTests */,
+				E989271716B37108006EA6FF /* Frameworks */,
+				E989271516B37108006EA6FF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E989271516B37108006EA6FF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E989271416B37108006EA6FF /* Flashcards.app */,
+				E989273516B37108006EA6FF /* FlashcardsTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E989271716B37108006EA6FF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E989271816B37108006EA6FF /* UIKit.framework */,
+				E989271A16B37108006EA6FF /* Foundation.framework */,
+				E989271C16B37108006EA6FF /* CoreGraphics.framework */,
+				E989273616B37108006EA6FF /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E989271E16B37108006EA6FF /* Flashcards */ = {
+			isa = PBXGroup;
+			children = (
+				E989272716B37108006EA6FF /* AppDelegate.h */,
+				E989272816B37108006EA6FF /* AppDelegate.m */,
+				E989272A16B37108006EA6FF /* MainStoryboard.storyboard */,
+				E989272D16B37108006EA6FF /* ViewController.h */,
+				E989272E16B37108006EA6FF /* ViewController.m */,
+				E989271F16B37108006EA6FF /* Supporting Files */,
+			);
+			path = Flashcards;
+			sourceTree = "<group>";
+		};
+		E989271F16B37108006EA6FF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E989272016B37108006EA6FF /* Flashcards-Info.plist */,
+				E989272116B37108006EA6FF /* InfoPlist.strings */,
+				E989272416B37108006EA6FF /* main.m */,
+				E989272616B37108006EA6FF /* Flashcards-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E989273C16B37108006EA6FF /* FlashcardsTests */ = {
+			isa = PBXGroup;
+			children = (
+				E989274216B37108006EA6FF /* FlashcardsTests.h */,
+				E989274316B37108006EA6FF /* FlashcardsTests.m */,
+				E989273D16B37108006EA6FF /* Supporting Files */,
+			);
+			path = FlashcardsTests;
+			sourceTree = "<group>";
+		};
+		E989273D16B37108006EA6FF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E989273E16B37108006EA6FF /* FlashcardsTests-Info.plist */,
+				E989273F16B37108006EA6FF /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E989271316B37108006EA6FF /* Flashcards */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E989274716B37108006EA6FF /* Build configuration list for PBXNativeTarget "Flashcards" */;
+			buildPhases = (
+				E989271016B37108006EA6FF /* Sources */,
+				E989271116B37108006EA6FF /* Frameworks */,
+				E989271216B37108006EA6FF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Flashcards;
+			productName = Flashcards;
+			productReference = E989271416B37108006EA6FF /* Flashcards.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E989273416B37108006EA6FF /* FlashcardsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E989274A16B37108006EA6FF /* Build configuration list for PBXNativeTarget "FlashcardsTests" */;
+			buildPhases = (
+				E989273016B37108006EA6FF /* Sources */,
+				E989273116B37108006EA6FF /* Frameworks */,
+				E989273216B37108006EA6FF /* Resources */,
+				E989273316B37108006EA6FF /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E989273B16B37108006EA6FF /* PBXTargetDependency */,
+			);
+			name = FlashcardsTests;
+			productName = FlashcardsTests;
+			productReference = E989273516B37108006EA6FF /* FlashcardsTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E989270B16B37108006EA6FF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = E989270E16B37108006EA6FF /* Build configuration list for PBXProject "Flashcards" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = E989270916B37108006EA6FF;
+			productRefGroup = E989271516B37108006EA6FF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E989271316B37108006EA6FF /* Flashcards */,
+				E989273416B37108006EA6FF /* FlashcardsTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E989271216B37108006EA6FF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E989272316B37108006EA6FF /* InfoPlist.strings in Resources */,
+				E989272C16B37108006EA6FF /* MainStoryboard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E989273216B37108006EA6FF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E989274116B37108006EA6FF /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		E989273316B37108006EA6FF /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E989271016B37108006EA6FF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E989272516B37108006EA6FF /* main.m in Sources */,
+				E989272916B37108006EA6FF /* AppDelegate.m in Sources */,
+				E989272F16B37108006EA6FF /* ViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E989273016B37108006EA6FF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E989274416B37108006EA6FF /* FlashcardsTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E989273B16B37108006EA6FF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E989271316B37108006EA6FF /* Flashcards */;
+			targetProxy = E989273A16B37108006EA6FF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E989272116B37108006EA6FF /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E989272216B37108006EA6FF /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		E989272A16B37108006EA6FF /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E989272B16B37108006EA6FF /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+		E989273F16B37108006EA6FF /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E989274016B37108006EA6FF /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E989274516B37108006EA6FF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		E989274616B37108006EA6FF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E989274816B37108006EA6FF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Flashcards/Flashcards-Prefix.pch";
+				INFOPLIST_FILE = "Flashcards/Flashcards-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		E989274916B37108006EA6FF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Flashcards/Flashcards-Prefix.pch";
+				INFOPLIST_FILE = "Flashcards/Flashcards-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		E989274B16B37108006EA6FF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Flashcards.app/Flashcards";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Flashcards/Flashcards-Prefix.pch";
+				INFOPLIST_FILE = "FlashcardsTests/FlashcardsTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		E989274C16B37108006EA6FF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Flashcards.app/Flashcards";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Flashcards/Flashcards-Prefix.pch";
+				INFOPLIST_FILE = "FlashcardsTests/FlashcardsTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E989270E16B37108006EA6FF /* Build configuration list for PBXProject "Flashcards" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E989274516B37108006EA6FF /* Debug */,
+				E989274616B37108006EA6FF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E989274716B37108006EA6FF /* Build configuration list for PBXNativeTarget "Flashcards" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E989274816B37108006EA6FF /* Debug */,
+				E989274916B37108006EA6FF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		E989274A16B37108006EA6FF /* Build configuration list for PBXNativeTarget "FlashcardsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E989274B16B37108006EA6FF /* Debug */,
+				E989274C16B37108006EA6FF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E989270B16B37108006EA6FF /* Project object */;
+}
