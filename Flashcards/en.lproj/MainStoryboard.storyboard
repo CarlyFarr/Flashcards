@@ -103,22 +103,67 @@
         <scene sceneID="4wm-BN-gPQ">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TFu-4b-woC" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="jkK-I7-P71" sceneMemberID="viewController">
+                <viewController id="jkK-I7-P71" customClass="FlashCardDisplayViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4qb-tC-cgH">
                         <rect key="frame" x="0.0" y="64" width="768" height="960"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="IVu-Uv-gee">
-                                <rect key="frame" x="88" y="207" width="593" height="431"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="YJt-2A-oey">
+                                <rect key="frame" x="670" y="32" width="78" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Flip">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="flipButtonPressed:" destination="jkK-I7-P71" eventType="touchUpInside" id="EqF-uA-t4l"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" id="lK7-dC-HTy">
+                                <rect key="frame" x="27" y="214" width="714" height="404"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" id="nVH-3g-UMy">
+                                        <rect key="frame" x="4" y="0.0" width="710" height="409"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" backgroundImage="flashcardImage.jpg">
+                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="flipButtonPressed:" destination="jkK-I7-P71" eventType="touchUpInside" id="h7i-A5-Z5Z"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="w9Y-bo-tEn"/>
+                    <connections>
+                        <outlet property="flashCardView" destination="nVH-3g-UMy" id="Yl0-59-3p7"/>
+                    </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="-6" y="-268"/>
+            <point key="canvasLocation" x="103" y="-366"/>
+        </scene>
+        <scene sceneID="jef-eg-PjS">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AEL-Jw-VXe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="vZy-iH-qSe" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="xoL-q6-ZOr"/>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1252" y="-221"/>
         </scene>
         <scene sceneID="KGC-4d-33I">
             <objects>
@@ -135,6 +180,18 @@
             <point key="canvasLocation" x="-1804" y="-1526"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="flashcardImage.jpg" width="272" height="185"/>
+    </resources>
+    <classes>
+        <class className="FlashCardDisplayViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FlashCardDisplayViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="flipButtonPressed:" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="flashCardView" candidateClass="UIView"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>
