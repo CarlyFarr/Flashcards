@@ -12,5 +12,11 @@
 
 - (IBAction)flipButtonPressed:(UIButton*)sender;
 @property (weak, nonatomic) IBOutlet UIView *flashCardView;
+@property (strong, nonatomic) NSArray *myArray;
+
+- (IBAction)Next:(id)sender;
+- (IBAction)Previous:(id)sender;
+
+
 
 @end

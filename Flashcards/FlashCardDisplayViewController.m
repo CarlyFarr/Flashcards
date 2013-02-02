@@ -8,45 +8,57 @@
 
 #import "FlashCardDisplayViewController.h"
 
+#define FRONT 100
+#define BACK 200
+
 @implementation FlashCardDisplayViewController
 @synthesize flashCardView;
+@synthesize myArray;
+
+- (void) viewDidLoad {
+    [super viewDidLoad];
+    self.myArray = [NSArray arrayWithObjects: @"One",@"Two", nil];
+    
+}
 
 - (IBAction)flipButtonPressed:(id)sender {
     UIView *newView;
     //Decide what newView will be
-    if ([self.flashCardView isKindOfClass:[UIImageView class]]) {
+    if (self.flashCardView.tag == BACK) {
         //We want to transition to front side
-   //     newView = [[UIView alloc] initWithFrame:self.flashCardView.frame];
-     //   newView.backgroundColor = [UIColor blueColor];
-        
         UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect]; 
         [button addTarget:self
                    action:@selector(flipButtonPressed:)
          forControlEvents:UIControlEventTouchUpInside];
-        [button setTitle:@"Show View" forState:UIControlStateNormal];
         button.frame = self.flashCardView.frame;
+        button.tag = FRONT; 
         newView = button;
-        
     }
     else{
-        //Transition to back view
+        //Make back view
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
         [button setBackgroundImage:[UIImage imageNamed:@"flashcardImage.jpg"] forState:UIControlStateNormal];
         [button addTarget:self action:@selector(flipButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
         button.frame = self.flashCardView.frame;
-        
+        button.tag = BACK;
         newView = button;
     }
-    
-    [UIView transitionFromView:self.flashCardView toView:newView duration:.5 options:UIViewAnimationOptionTransitionFlipFromRight completion:^(BOOL finished){
+    //Flipping direction based on side 
+    [UIView transitionFromView:self.flashCardView toView:newView duration:.5 options:self.flashCardView.tag == FRONT? UIViewAnimationOptionTransitionFlipFromLeft:UIViewAnimationOptionTransitionFlipFromRight completion:^(BOOL finished){
         if (finished) {
             self.flashCardView = (UIView*) newView;
         }
+                
     }];
     
 }
 - (void)viewDidUnload {
     [self setFlashCardView:nil];
     [super viewDidUnload];
+}
+- (IBAction)Next:(id)sender {
+}
+
+- (IBAction)Previous:(id)sender {
 }
 @end
