@@ -33,7 +33,8 @@
                    action:@selector(flipButtonPressed:)
          forControlEvents:UIControlEventTouchUpInside];
         button.frame = self.flashCardView.frame;
-        [button setTitle: [self.myArray objectAtIndex:0] forState:UIControlStateNormal];
+        UIButton *currentButton = (UIButton*) self.flashCardView;
+        [button setTitle:currentButton.currentTitle forState:UIControlStateNormal];
         button.tag = FRONT; 
         newView = button;
     }
@@ -43,7 +44,8 @@
         [button setBackgroundImage:[UIImage imageNamed:@"flashcardImage.jpg"] forState:UIControlStateNormal];
         [button addTarget:self action:@selector(flipButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
         button.frame = self.flashCardView.frame;
-        [button setTitle: [self.myArray objectAtIndex:0] forState:UIControlStateNormal];
+        UIButton *currentButton = (UIButton*) self.flashCardView;
+        [button setTitle:currentButton.currentTitle forState:UIControlStateNormal];
         button.tag = BACK;
         newView = button;
     }
