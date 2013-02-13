@@ -88,6 +88,7 @@
 }
 
 - (IBAction)Previous:(id)sender {
+
     UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect]; 
     [button addTarget:self
                action:@selector(flipButtonPressed:)
@@ -95,7 +96,15 @@
     button.frame = self.flashCardView.frame;
     UIButton *currentButton = (UIButton*) self.flashCardView;
     [button setTitle: [self.myArray objectAtIndex:0] forState:UIControlStateNormal];
-    NSUInteger prevIndex = ([self.myArray indexOfObject:currentButton.currentTitle]-1)%self.myArray.count;  
+    
+    //Move to previous index...check if less than 0 (If so make equal to count - 1)
+   // NSUInteger prevIndex = ([self.myArray indexOfObject:currentButton.currentTitle]-1)%self.myArray.count;  
+    NSInteger prevIndex = [self.myArray indexOfObject:currentButton.currentTitle];
+    if (prevIndex-1<0)
+        prevIndex = self.myArray.count-1; 
+    else 
+        prevIndex = prevIndex-1;
+    
     [button setTitle: [self.myArray objectAtIndex:prevIndex] forState:UIControlStateNormal];
     button.frame = CGRectMake(self.flashCardView.frame.origin.x, -self.flashCardView.frame.size.height, self.flashCardView.frame.size.width, self.flashCardView.frame.size.height);
     button.tag = FRONT; 
