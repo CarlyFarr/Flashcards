@@ -19,6 +19,9 @@
     [super viewDidLoad];
     self.myArray = [NSMutableArray arrayWithObjects:@"ONE", @"TWO", @"THREE", @"FOUR", @"FIVE", @"SIX", @"SEVEN", @"EIGHT", @"NINE", @"TEN", nil];
     
+    //Set text of initial card
+    UIButton *currentButton = (UIButton*) self.flashCardView;
+    [currentButton setTitle:[self.myArray objectAtIndex:0] forState:UIControlStateNormal];
         
 }
 
