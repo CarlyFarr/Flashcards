@@ -7,15 +7,84 @@
 //
 
 #import "AppDelegate.h"
+#import "Flashcard.h"
+#import "FlashcardDeck.h"
 
 @implementation AppDelegate
 
 @synthesize window = _window;
+@synthesize database = _database;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-    return YES;
+    NSURL* documentURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"database"];
+    
+    //Open/Create Database Document
+    self.database = [[UIManagedDocument alloc] initWithFileURL:documentURL];
+    
+    if ([[NSFileManager defaultManager] fileExistsAtPath:self.database.fileURL.path]){
+        //Open existing document
+        NSLog(@"Openning Existing Document");
+
+        [self.database openWithCompletionHandler:^(BOOL success) {
+            if (!success) {
+                NSLog(@"Error: %d",self.database.documentState);
+            }
+            else{
+                //Test that we persisted data between launches
+                
+                //Query for all objects...that have a specific value for "frontSide" property
+                NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Flashcard"];
+                fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"backSide" ascending:YES]];
+                fetchRequest.predicate = [NSPredicate predicateWithFormat:@"frontSide == %@",@"Test String"];
+                
+                //Execute fetch request
+                NSError *error = nil;
+                NSArray *fetchedObjects = [self.database.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+                if (!error) {
+                    NSLog(@"Persisted Data: %@",fetchedObjects);
+                }
+            }
+        }];
+
+    }
+    else{
+        //Create new document
+        NSLog(@"Inital Save");
+        [self.database saveToURL:self.database.fileURL forSaveOperation:UIDocumentSaveForCreating completionHandler:^(BOOL success) {
+            if (success) {
+                //Use database
+                
+                for (int i = 0; i<5; i++) {
+                    //Add an object
+                    Flashcard *newFlashCard = [NSEntityDescription insertNewObjectForEntityForName:@"Flashcard" inManagedObjectContext:self.database.managedObjectContext];
+                    newFlashCard.frontSide = @"Test String";
+                    newFlashCard.backSide = [NSString stringWithFormat:@"Card Number:%d",i];
+                }
+                
+                //Query for all objects
+                NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Flashcard"];
+                fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"backSide" ascending:YES]];
+                
+                NSError *error = nil;
+                NSArray *allObjects = [self.database.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+                if (!error) {
+                    NSLog(@"Objects: %@",allObjects);
+                }
+            
+                //Explictly call save (Not necessary because NS
+                [self.database saveToURL:self.database.fileURL forSaveOperation:UIDocumentSaveForOverwriting completionHandler:^(BOOL success) {
+                    if (success) {
+                        NSLog(@"Saved Database");
+                    }
+                }];
+            }
+            
+            
+            
+        }];
+    }    return YES;
 }
 							
 - (void)applicationWillResignActive:(UIApplication *)application
@@ -55,6 +124,13 @@
      Save data if appropriate.
      See also applicationDidEnterBackground:.
      */
+}
+- (NSURL *)applicationDocumentsDirectory
+{
+    NSArray *searchPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentPath = [searchPaths lastObject];
+    
+    return [NSURL fileURLWithPath:documentPath];
 }
 
 @end
