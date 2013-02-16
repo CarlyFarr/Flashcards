@@ -34,9 +34,10 @@
             else{
                 //Test that we persisted data between launches
                 
+                
                 //Query for all objects...that have a specific value for "frontSide" property
                 NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Flashcard"];
-                fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"backSide" ascending:YES]];
+                fetchRequest.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"backSide" ascending:YES]];
                 fetchRequest.predicate = [NSPredicate predicateWithFormat:@"frontSide == %@",@"Test String"];
                 
                 //Execute fetch request
@@ -51,7 +52,7 @@
     }
     else{
         //Create new document
-        NSLog(@"Inital Save");
+        NSLog(@"Initial Save");
         [self.database saveToURL:self.database.fileURL forSaveOperation:UIDocumentSaveForCreating completionHandler:^(BOOL success) {
             if (success) {
                 //Use database
@@ -64,8 +65,9 @@
                 }
                 
                 //Query for all objects
+                //! means not 
                 NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Flashcard"];
-                fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"backSide" ascending:YES]];
+                fetchRequest.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"backSide" ascending:YES]];
                 
                 NSError *error = nil;
                 NSArray *allObjects = [self.database.managedObjectContext executeFetchRequest:fetchRequest error:&error];
