@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		42C3116F16D4671900923D83 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42C3116E16D4671900923D83 /* QuartzCore.framework */; };
 		83FD146D16CF236400EBC32E /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 83FD146B16CF236400EBC32E /* Model.xcdatamodeld */; };
 		83FD147016CF257600EBC32E /* FlashcardDeck.m in Sources */ = {isa = PBXBuildFile; fileRef = 83FD146F16CF257600EBC32E /* FlashcardDeck.m */; };
 		83FD147316CF257600EBC32E /* Flashcard.m in Sources */ = {isa = PBXBuildFile; fileRef = 83FD147216CF257600EBC32E /* Flashcard.m */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		42C3116E16D4671900923D83 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		83FD146C16CF236400EBC32E /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		83FD146E16CF257600EBC32E /* FlashcardDeck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlashcardDeck.h; sourceTree = "<group>"; };
 		83FD146F16CF257600EBC32E /* FlashcardDeck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlashcardDeck.m; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42C3116F16D4671900923D83 /* QuartzCore.framework in Frameworks */,
 				83FD147516CF265100EBC32E /* CoreData.framework in Frameworks */,
 				E989271916B37108006EA6FF /* UIKit.framework in Frameworks */,
 				E989271B16B37108006EA6FF /* Foundation.framework in Frameworks */,
@@ -116,6 +119,7 @@
 		E989271716B37108006EA6FF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				42C3116E16D4671900923D83 /* QuartzCore.framework */,
 				83FD147416CF265100EBC32E /* CoreData.framework */,
 				E989271816B37108006EA6FF /* UIKit.framework */,
 				E989271A16B37108006EA6FF /* Foundation.framework */,

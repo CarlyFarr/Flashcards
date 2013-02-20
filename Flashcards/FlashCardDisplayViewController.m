@@ -52,14 +52,33 @@
         button.tag = BACK;
         newView = button;
     }
-    //Flipping direction based on side 
+    
+    
+    //Flipping direction based on side
+    /*
     [UIView transitionFromView:self.flashCardView toView:newView duration:.5 options:self.flashCardView.tag == FRONT? UIViewAnimationOptionTransitionFlipFromLeft:UIViewAnimationOptionTransitionFlipFromRight completion:^(BOOL finished){
         if (finished) {
             self.flashCardView = (UIView*) newView;
         }
                 
-    }];
+    }];*/
     
+    [UIView animateWithDuration:.3 animations:^{
+        //Transition the current view to sideways
+        CATransform3D rotationTransform = CATransform3DMakeRotation(M_PI_2, 0, 1, 0);
+        self.flashCardView.layer.transform = rotationTransform;
+    }completion:^(BOOL finished) {
+        //Add the new view and remove the old view
+        newView.layer.transform = self.flashCardView.layer.transform;
+        [self.flashCardView removeFromSuperview];
+        [self.view addSubview:newView];
+        self.flashCardView = newView;
+
+        //Transition the new view to the correct way
+        [UIView animateWithDuration:.3 animations:^{
+            self.flashCardView.layer.transform = CATransform3DIdentity;
+        }];
+    }];
 }
 - (void)viewDidUnload {
     [self setFlashCardView:nil];
