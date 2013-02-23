@@ -21,6 +21,7 @@
     
     //Set text of initial card
     UIButton *currentButton = (UIButton*) self.flashCardView;
+    [currentButton setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
     [currentButton setTitle:[self.myArray objectAtIndex:0] forState:UIControlStateNormal];
         
 }
@@ -37,6 +38,7 @@
          forControlEvents:UIControlEventTouchUpInside];
         button.frame = self.flashCardView.frame;
         UIButton *currentButton = (UIButton*) self.flashCardView;
+        [button setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
         [button setTitle:currentButton.currentTitle forState:UIControlStateNormal];
         button.tag = FRONT; 
         newView = button;
@@ -48,6 +50,7 @@
         [button addTarget:self action:@selector(flipButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
         button.frame = self.flashCardView.frame;
         UIButton *currentButton = (UIButton*) self.flashCardView;
+        [button setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
         [button setTitle:currentButton.currentTitle forState:UIControlStateNormal];
         button.tag = BACK;
         newView = button;
@@ -93,6 +96,7 @@
     button.frame = self.flashCardView.frame;
     UIButton *currentButton = (UIButton*) self.flashCardView;
     [button setTitle: [self.myArray objectAtIndex:0] forState:UIControlStateNormal];
+    [button setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
     NSUInteger nextIndex = ([self.myArray indexOfObject:currentButton.currentTitle]+1)%self.myArray.count;  
     [button setTitle: [self.myArray objectAtIndex:nextIndex] forState:UIControlStateNormal];
     button.tag = FRONT; 
@@ -129,6 +133,7 @@
     else 
         prevIndex = prevIndex-1;
     
+    [button setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
     [button setTitle: [self.myArray objectAtIndex:prevIndex] forState:UIControlStateNormal];
     button.frame = CGRectMake(self.flashCardView.frame.origin.x, -self.flashCardView.frame.size.height, self.flashCardView.frame.size.width, self.flashCardView.frame.size.height);
     button.tag = FRONT; 
