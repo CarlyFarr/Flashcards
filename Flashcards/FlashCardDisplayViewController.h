@@ -13,6 +13,8 @@
 - (IBAction)flipButtonPressed:(UIButton*)sender;
 @property (weak, nonatomic) IBOutlet UIView *flashCardView;
 @property (strong, nonatomic) NSMutableArray *myArray;
+@property (weak, nonatomic) IBOutlet UIButton *nextButton;
+@property (weak, nonatomic) IBOutlet UIButton *previousButton;
 
 - (IBAction)Next:(id)sender;
 - (IBAction)Previous:(id)sender;

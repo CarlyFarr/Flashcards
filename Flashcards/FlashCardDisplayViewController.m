@@ -14,6 +14,8 @@
 @implementation FlashCardDisplayViewController
 @synthesize flashCardView;
 @synthesize myArray;
+@synthesize nextButton;
+@synthesize previousButton;
 
 - (void) viewDidLoad {
     [super viewDidLoad];
@@ -66,6 +68,8 @@
                 
     }];*/
     
+    self.nextButton.enabled = NO;
+    self.previousButton.enabled = NO;
     [UIView animateWithDuration:.3 animations:^{
         //Transition the current view to sideways
         CATransform3D rotationTransform = CATransform3DMakeRotation(M_PI_2, 0, 1, 0);
@@ -80,11 +84,18 @@
         //Transition the new view to the correct way
         [UIView animateWithDuration:.3 animations:^{
             self.flashCardView.layer.transform = CATransform3DIdentity;
-        }];
+        }
+         completion:^(BOOL finished) {
+             self.nextButton.enabled = YES; 
+             self.previousButton.enabled = YES; 
+         }];
+        
     }];
 }
 - (void)viewDidUnload {
     [self setFlashCardView:nil];
+    [self setNextButton:nil];
+    [self setPreviousButton:nil];
     [super viewDidUnload];
 }
 - (IBAction)Next:(id)sender {
@@ -110,7 +121,6 @@
     }completion:^(BOOL finished) {
         [self.flashCardView removeFromSuperview];
         self.flashCardView = newView;
-        
     }];
     
 }

@@ -159,6 +159,8 @@
                     <navigationItem key="navigationItem" id="w9Y-bo-tEn"/>
                     <connections>
                         <outlet property="flashCardView" destination="nVH-3g-UMy" id="Yl0-59-3p7"/>
+                        <outlet property="nextButton" destination="64K-9M-IDS" id="kJD-Xd-nCo"/>
+                        <outlet property="previousButton" destination="ONZ-gd-RGx" id="fLV-Ig-iM0"/>
                     </connections>
                 </viewController>
             </objects>
@@ -179,17 +181,6 @@
             <point key="canvasLocation" x="-1804" y="-1526"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="FlashCardDisplayViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/FlashCardDisplayViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="Next:"/>
-                <relationship kind="action" name="Previous:"/>
-                <relationship kind="action" name="flipButtonPressed:" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="flashCardView" candidateClass="UIView"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>
