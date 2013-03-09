@@ -8,7 +8,7 @@
         <scene sceneID="Zop-1z-LWs">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KML-hy-0dT" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="gf8-nK-hpC" sceneMemberID="viewController">
+                <viewController id="gf8-nK-hpC" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MgA-KX-o3L">
                         <rect key="frame" x="0.0" y="64" width="768" height="960"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -41,6 +41,10 @@
                         <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="gkL-Yb-ZAs"/>
+                    <connections>
+                        <outlet property="bottomView" destination="llF-bA-mKl" id="o4A-5O-jj4"/>
+                        <outlet property="topView" destination="7Ct-8B-kjx" id="KSg-wN-1MG"/>
+                    </connections>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="-6" y="-1534"/>
@@ -181,6 +185,26 @@
             <point key="canvasLocation" x="-1804" y="-1526"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="FlashCardDisplayViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FlashCardDisplayViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="Next:"/>
+                <relationship kind="action" name="Previous:"/>
+                <relationship kind="action" name="flipButtonPressed:" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="flashCardView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="nextButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="previousButton" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="ViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="bottomView" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="topView" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>

@@ -9,6 +9,8 @@
 #import "ViewController.h"
 
 @implementation ViewController
+@synthesize topView;
+@synthesize bottomView;
 
 - (void)didReceiveMemoryWarning
 {
@@ -23,10 +25,27 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
+    UITextView *topTextView = [[UITextView alloc] initWithFrame:self.topView.frame];
+    topTextView.text = @"something";
+    topTextView.font = [UIFont systemFontOfSize:26];
+    topTextView.textAlignment = UITextAlignmentCenter;
+    [self.view addSubview:topTextView];
+    [topTextView sizeToFit];
+    
+    UITextView *bottomTextView = [[UITextView alloc] initWithFrame:self.bottomView.frame]; 
+    bottomTextView. text = @"BOTTOM";
+    bottomTextView.font = [UIFont systemFontOfSize:26];
+    bottomTextView.textAlignment = UITextAlignmentCenter;
+    [self.view addSubview:bottomTextView];
+    [bottomTextView sizeToFit];
+
+    
 }
 
 - (void)viewDidUnload
 {
+    [self setTopView:nil];
+    [self setBottomView:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
