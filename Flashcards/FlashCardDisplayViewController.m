@@ -16,6 +16,8 @@
 @synthesize myArray;
 @synthesize nextButton;
 @synthesize previousButton;
+@synthesize lazyModeButton;
+@synthesize lazyModeTimer;
 
 - (void) viewDidLoad {
     [super viewDidLoad];
@@ -96,6 +98,7 @@
     [self setFlashCardView:nil];
     [self setNextButton:nil];
     [self setPreviousButton:nil];
+    [self setLazyModeButton:nil];
     [super viewDidUnload];
 }
 - (IBAction)Next:(id)sender {
@@ -163,7 +166,24 @@
     
 }
 
+- (IBAction)lazyModePressed:(id)sender {
+    if (self.lazyModeTimer == nil|| self.lazyModeTimer.isValid == NO) {
+        self.lazyModeTimer = [NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(moveInLazyMode) userInfo:nil repeats:YES];
+    }
+    else {
+        [self.lazyModeTimer invalidate];
+    }
+}
 
+- (void) moveInLazyMode{
+    if (self.flashCardView.tag == FRONT) {
+        [self flipButtonPressed:nil];
+    }
+    else {
+        [self Next:nil];
+    }
+}
+    
 
 
 @end

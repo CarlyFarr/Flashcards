@@ -15,9 +15,12 @@
 @property (strong, nonatomic) NSMutableArray *myArray;
 @property (weak, nonatomic) IBOutlet UIButton *nextButton;
 @property (weak, nonatomic) IBOutlet UIButton *previousButton;
+@property (weak, nonatomic) IBOutlet UIButton *lazyModeButton;
+@property (strong, nonatomic) NSTimer *lazyModeTimer;
 
 - (IBAction)Next:(id)sender;
 - (IBAction)Previous:(id)sender;
+- (IBAction)lazyModePressed:(id)sender;
 
 
 @end
