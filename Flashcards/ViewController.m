@@ -11,6 +11,7 @@
 @implementation ViewController
 @synthesize topView;
 @synthesize bottomView;
+@synthesize saveButton;
 
 - (void)didReceiveMemoryWarning
 {
@@ -77,4 +78,6 @@
     return YES;
 }
 
+- (IBAction)saveButtonPressed:(id)sender {
+}
 @end

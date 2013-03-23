@@ -17,10 +17,12 @@
 @property (weak, nonatomic) IBOutlet UIButton *previousButton;
 @property (weak, nonatomic) IBOutlet UIButton *lazyModeButton;
 @property (strong, nonatomic) NSTimer *lazyModeTimer;
+@property (weak, nonatomic) IBOutlet UIButton *editButton;
 
 - (IBAction)Next:(id)sender;
 - (IBAction)Previous:(id)sender;
 - (IBAction)lazyModePressed:(id)sender;
+- (IBAction)editButtonPressed:(id)sender;
 
 
 @end

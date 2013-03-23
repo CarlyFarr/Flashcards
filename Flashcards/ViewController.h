@@ -11,5 +11,6 @@
 @interface ViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIButton *topView;
 @property (weak, nonatomic) IBOutlet UIButton *bottomView;
-
+- (IBAction)saveButtonPressed:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *saveButton;
 @end

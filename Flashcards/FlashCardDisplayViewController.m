@@ -175,6 +175,9 @@
     }
 }
 
+- (IBAction)editButtonPressed:(id)sender {
+}
+
 - (void) moveInLazyMode{
     if (self.flashCardView.tag == FRONT) {
         [self flipButtonPressed:nil];

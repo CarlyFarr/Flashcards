@@ -1,20 +1,19 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.0" toolsVersion="1938" systemVersion="10K549" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="Lot-gR-psI">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12D78" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="Lot-gR-psI">
     <dependencies>
-        <development defaultVersion="4200" identifier="xcode"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="933"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
     <scenes>
+        <!--View Controller - Title-->
         <scene sceneID="Zop-1z-LWs">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="KML-hy-0dT" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="gf8-nK-hpC" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MgA-KX-o3L">
                         <rect key="frame" x="0.0" y="64" width="768" height="960"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="llF-bA-mKl">
-                                <rect key="frame" x="35" y="514" width="699" height="388"/>
+                                <rect key="frame" x="35" y="480" width="699" height="388"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal">
@@ -26,7 +25,7 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="7Ct-8B-kjx">
-                                <rect key="frame" x="35" y="70" width="699" height="388"/>
+                                <rect key="frame" x="35" y="52" width="699" height="388"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal">
@@ -37,21 +36,38 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="c9A-0J-8ty">
+                                <rect key="frame" x="669" y="892" width="65" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="SAVE">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveButtonPressed:" destination="gf8-nK-hpC" eventType="touchUpInside" id="bmO-hi-Iam"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="gkL-Yb-ZAs"/>
                     <connections>
                         <outlet property="bottomView" destination="llF-bA-mKl" id="o4A-5O-jj4"/>
+                        <outlet property="saveButton" destination="c9A-0J-8ty" id="OzL-Wl-qM9"/>
                         <outlet property="topView" destination="7Ct-8B-kjx" id="KSg-wN-1MG"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KML-hy-0dT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-6" y="-1534"/>
         </scene>
+        <!--View Controller - Flashcard Decks-->
         <scene sceneID="84u-MP-MTZ">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5f6-rW-jfB" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="epu-M3-VK0" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7Pw-1z-K9L">
                         <rect key="frame" x="0.0" y="64" width="768" height="960"/>
@@ -101,12 +117,13 @@
                         <barButtonItem key="rightBarButtonItem" id="NwL-HR-VKB"/>
                     </navigationItem>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5f6-rW-jfB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-932" y="-1526"/>
         </scene>
+        <!--Flash Card Display View Controller-->
         <scene sceneID="4wm-BN-gPQ">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="TFu-4b-woC" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="jkK-I7-P71" customClass="FlashCardDisplayViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4qb-tC-cgH" userLabel="LazyMode">
                         <rect key="frame" x="0.0" y="64" width="768" height="960"/>
@@ -172,23 +189,40 @@
                                     <action selector="lazyModePressed:" destination="jkK-I7-P71" eventType="touchUpInside" id="D6Z-Qs-iYD"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="XTK-OG-hMv">
+                                <rect key="frame" x="29" y="879" width="57" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Edit ">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="editButtonPressed:" destination="jkK-I7-P71" eventType="touchUpInside" id="tFG-mJ-c6V"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="w9Y-bo-tEn"/>
                     <connections>
+                        <outlet property="editButton" destination="XTK-OG-hMv" id="pVe-vS-ZPF"/>
                         <outlet property="flashCardView" destination="nVH-3g-UMy" id="Yl0-59-3p7"/>
                         <outlet property="lazyModeButton" destination="Zg7-RY-ekE" id="0Kj-8D-9yW"/>
                         <outlet property="nextButton" destination="64K-9M-IDS" id="kJD-Xd-nCo"/>
                         <outlet property="previousButton" destination="ONZ-gd-RGx" id="fLV-Ig-iM0"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TFu-4b-woC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="135" y="-350"/>
         </scene>
+        <!--Navigation Controller-->
         <scene sceneID="KGC-4d-33I">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="al3-E7-QNx" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController definesPresentationContext="YES" id="Lot-gR-psI" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="s1e-G7-fJf">
                         <autoresizingMask key="autoresizingMask"/>
@@ -197,10 +231,37 @@
                         <segue destination="epu-M3-VK0" kind="relationship" relationship="rootViewController" id="edo-rc-ine"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="al3-E7-QNx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1804" y="-1526"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="FlashCardDisplayViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FlashCardDisplayViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="Next:"/>
+                <relationship kind="action" name="Previous:"/>
+                <relationship kind="action" name="editButtonPressed:"/>
+                <relationship kind="action" name="flipButtonPressed:" candidateClass="UIButton"/>
+                <relationship kind="action" name="lazyModePressed:"/>
+                <relationship kind="outlet" name="editButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="flashCardView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="lazyModeButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="nextButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="previousButton" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="ViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="saveButtonPressed:"/>
+                <relationship kind="outlet" name="bottomView" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="saveButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="topView" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>
