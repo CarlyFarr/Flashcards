@@ -12,24 +12,39 @@
 #define BACK 200
 
 @implementation FlashCardDisplayViewController
-@synthesize flashCardView;
-@synthesize myArray;
-@synthesize nextButton;
-@synthesize previousButton;
-@synthesize lazyModeButton;
-@synthesize lazyModeTimer;
+@synthesize flashCardView = _flashCardView;
+@synthesize myArray = _myArray;
+@synthesize nextButton = _nextButton;
+@synthesize previousButton = _previousButton;
+@synthesize lazyModeButton =  _lazyModeButton;
+@synthesize lazyModeTimer = _lazyModeTimer;
+
 
 - (void) viewDidLoad {
     [super viewDidLoad];
-    self.myArray = [NSMutableArray arrayWithObjects:[FlashcardModel flashCardWithFront:@"Front" Back:@"Back"],[FlashcardModel flashCardWithFront:@"Carly" Back:@"Tiguay"], [FlashcardModel flashCardWithFront:@"Christopher" Back:@"Cwiiss"], nil];
     
-    //Set text of initial card
-    UIButton *currentButton = (UIButton*) self.flashCardView;
-    [currentButton setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
-    self.currentFlashcard = self.myArray.lastObject;
+    //Force setMyArray to be called again after outlets set
+    self.myArray = self.myArray;
     
-    [currentButton setTitle:self.currentFlashcard.frontString forState:UIControlStateNormal];
+}
+
+- (void)setMyArray:(NSMutableArray *)myArray{
+    _myArray = myArray;
+    
+    if (_myArray != nil && self.myArray.count > 0) {
+        //Set text of initial card
+        UIButton *currentButton = (UIButton*) self.flashCardView;
+        self.flashCardView.hidden = NO;
+        [currentButton setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+        self.currentFlashcard = self.myArray.lastObject;
         
+        [currentButton setTitle:self.currentFlashcard.frontString forState:UIControlStateNormal];
+    }
+    else{
+        self.flashCardView.hidden = YES;
+    }
+
+    
 }
 
 
@@ -102,6 +117,9 @@
     [super viewDidUnload];
 }
 - (IBAction)Next:(id)sender {
+    if (self.myArray == nil || self.myArray.count == 0)
+        return;
+    
     UIView *newView;
     UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect]; 
     [button addTarget:self
@@ -128,6 +146,8 @@
 }
 
 - (IBAction)Previous:(id)sender {
+    if (self.myArray == nil || self.myArray.count == 0)
+        return;
 
     UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect]; 
     [button addTarget:self

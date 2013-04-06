@@ -65,10 +65,10 @@
             </objects>
             <point key="canvasLocation" x="-6" y="-1534"/>
         </scene>
-        <!--View Controller - Flashcard Decks-->
+        <!--Flashcard Deck View Controller - Flashcard Decks-->
         <scene sceneID="84u-MP-MTZ">
             <objects>
-                <viewController id="epu-M3-VK0" sceneMemberID="viewController">
+                <viewController id="epu-M3-VK0" customClass="FlashcardDeckViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7Pw-1z-K9L">
                         <rect key="frame" x="0.0" y="64" width="768" height="960"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -89,7 +89,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <segue destination="jkK-I7-P71" kind="push" id="qnE-68-nUl"/>
+                                            <segue destination="jkK-I7-P71" kind="push" identifier="DisplayDeck" id="qnE-68-nUl"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="XIx-FA-Qxl">
@@ -119,7 +119,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5f6-rW-jfB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-932" y="-1526"/>
+            <point key="canvasLocation" x="-918" y="-1516"/>
         </scene>
         <!--Flash Card Display View Controller-->
         <scene sceneID="4wm-BN-gPQ">
@@ -129,7 +129,7 @@
                         <rect key="frame" x="0.0" y="64" width="768" height="960"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button tag="100" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="nVH-3g-UMy">
+                            <button hidden="YES" tag="100" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="nVH-3g-UMy">
                                 <rect key="frame" x="29" y="276" width="710" height="409"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" size="button"/>
@@ -236,32 +236,6 @@
             <point key="canvasLocation" x="-1804" y="-1526"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="FlashCardDisplayViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/FlashCardDisplayViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="Next:"/>
-                <relationship kind="action" name="Previous:"/>
-                <relationship kind="action" name="editButtonPressed:"/>
-                <relationship kind="action" name="flipButtonPressed:" candidateClass="UIButton"/>
-                <relationship kind="action" name="lazyModePressed:"/>
-                <relationship kind="outlet" name="editButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="flashCardView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="lazyModeButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="nextButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="previousButton" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="ViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="saveButtonPressed:"/>
-                <relationship kind="outlet" name="bottomView" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="saveButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="topView" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>

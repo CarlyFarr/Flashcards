@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		429DDE5B170FDBE600D2C1D6 /* FlashcardModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 429DDE5A170FDBE600D2C1D6 /* FlashcardModel.m */; };
+		429DDE5E171081EF00D2C1D6 /* FlashcardDeckViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 429DDE5D171081EF00D2C1D6 /* FlashcardDeckViewController.m */; };
 		42C3116F16D4671900923D83 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42C3116E16D4671900923D83 /* QuartzCore.framework */; };
 		83FD146D16CF236400EBC32E /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 83FD146B16CF236400EBC32E /* Model.xcdatamodeld */; };
 		83FD147016CF257600EBC32E /* FlashcardDeck.m in Sources */ = {isa = PBXBuildFile; fileRef = 83FD146F16CF257600EBC32E /* FlashcardDeck.m */; };
@@ -43,6 +44,8 @@
 /* Begin PBXFileReference section */
 		429DDE59170FDBE600D2C1D6 /* FlashcardModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlashcardModel.h; sourceTree = "<group>"; };
 		429DDE5A170FDBE600D2C1D6 /* FlashcardModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlashcardModel.m; sourceTree = "<group>"; };
+		429DDE5C171081EF00D2C1D6 /* FlashcardDeckViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlashcardDeckViewController.h; sourceTree = "<group>"; };
+		429DDE5D171081EF00D2C1D6 /* FlashcardDeckViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlashcardDeckViewController.m; sourceTree = "<group>"; };
 		42C3116E16D4671900923D83 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		83FD146C16CF236400EBC32E /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		83FD146E16CF257600EBC32E /* FlashcardDeck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlashcardDeck.h; sourceTree = "<group>"; };
@@ -143,6 +146,8 @@
 				E9BB88CB16B8C1160002529B /* FlashCardDisplayViewController.m */,
 				E989272D16B37108006EA6FF /* ViewController.h */,
 				E989272E16B37108006EA6FF /* ViewController.m */,
+				429DDE5C171081EF00D2C1D6 /* FlashcardDeckViewController.h */,
+				429DDE5D171081EF00D2C1D6 /* FlashcardDeckViewController.m */,
 				E989271F16B37108006EA6FF /* Supporting Files */,
 				83FD146B16CF236400EBC32E /* Model.xcdatamodeld */,
 				429DDE59170FDBE600D2C1D6 /* FlashcardModel.h */,
@@ -300,6 +305,7 @@
 				83FD147016CF257600EBC32E /* FlashcardDeck.m in Sources */,
 				83FD147316CF257600EBC32E /* Flashcard.m in Sources */,
 				429DDE5B170FDBE600D2C1D6 /* FlashcardModel.m in Sources */,
+				429DDE5E171081EF00D2C1D6 /* FlashcardDeckViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
