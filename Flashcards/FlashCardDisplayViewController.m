@@ -21,12 +21,14 @@
 
 - (void) viewDidLoad {
     [super viewDidLoad];
-    self.myArray = [NSMutableArray arrayWithObjects:@"ONE", @"TWO", @"THREE", @"FOUR", @"FIVE", @"SIX", @"SEVEN", @"EIGHT", @"NINE", @"TEN", nil];
+    self.myArray = [NSMutableArray arrayWithObjects:[FlashcardModel flashCardWithFront:@"Front" Back:@"Back"],[FlashcardModel flashCardWithFront:@"Carly" Back:@"Tiguay"], [FlashcardModel flashCardWithFront:@"Christopher" Back:@"Cwiiss"], nil];
     
     //Set text of initial card
     UIButton *currentButton = (UIButton*) self.flashCardView;
     [currentButton setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
-    [currentButton setTitle:[self.myArray objectAtIndex:0] forState:UIControlStateNormal];
+    self.currentFlashcard = self.myArray.lastObject;
+    
+    [currentButton setTitle:self.currentFlashcard.frontString forState:UIControlStateNormal];
         
 }
 
@@ -41,9 +43,8 @@
                    action:@selector(flipButtonPressed:)
          forControlEvents:UIControlEventTouchUpInside];
         button.frame = self.flashCardView.frame;
-        UIButton *currentButton = (UIButton*) self.flashCardView;
         [button setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
-        [button setTitle:currentButton.currentTitle forState:UIControlStateNormal];
+        [button setTitle:self.currentFlashcard.frontString forState:UIControlStateNormal];
         button.tag = FRONT; 
         newView = button;
     }
@@ -53,9 +54,8 @@
         [button setBackgroundImage:[UIImage imageNamed:@"flashcardImage.jpg"] forState:UIControlStateNormal];
         [button addTarget:self action:@selector(flipButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
         button.frame = self.flashCardView.frame;
-        UIButton *currentButton = (UIButton*) self.flashCardView;
         [button setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
-        [button setTitle:currentButton.currentTitle forState:UIControlStateNormal];
+        [button setTitle:self.currentFlashcard.backString forState:UIControlStateNormal];
         button.tag = BACK;
         newView = button;
     }
@@ -108,11 +108,10 @@
                action:@selector(flipButtonPressed:)
      forControlEvents:UIControlEventTouchUpInside];
     button.frame = self.flashCardView.frame;
-    UIButton *currentButton = (UIButton*) self.flashCardView;
-    [button setTitle: [self.myArray objectAtIndex:0] forState:UIControlStateNormal];
     [button setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
-    NSUInteger nextIndex = ([self.myArray indexOfObject:currentButton.currentTitle]+1)%self.myArray.count;  
-    [button setTitle: [self.myArray objectAtIndex:nextIndex] forState:UIControlStateNormal];
+    NSUInteger nextIndex = ([self.myArray indexOfObject:self.currentFlashcard]+1)%self.myArray.count;
+    self.currentFlashcard = [self.myArray objectAtIndex:nextIndex];
+    [button setTitle: [[self.myArray objectAtIndex:nextIndex] frontString] forState:UIControlStateNormal];
     button.tag = FRONT; 
     newView = button;
     
@@ -135,19 +134,18 @@
                action:@selector(flipButtonPressed:)
      forControlEvents:UIControlEventTouchUpInside];
     button.frame = self.flashCardView.frame;
-    UIButton *currentButton = (UIButton*) self.flashCardView;
-    [button setTitle: [self.myArray objectAtIndex:0] forState:UIControlStateNormal];
     
     //Move to previous index...check if less than 0 (If so make equal to count - 1)
    // NSUInteger prevIndex = ([self.myArray indexOfObject:currentButton.currentTitle]-1)%self.myArray.count;  
-    NSInteger prevIndex = [self.myArray indexOfObject:currentButton.currentTitle];
+    NSInteger prevIndex = [self.myArray indexOfObject:self.currentFlashcard];
     if (prevIndex-1<0)
         prevIndex = self.myArray.count-1; 
     else 
         prevIndex = prevIndex-1;
     
     [button setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
-    [button setTitle: [self.myArray objectAtIndex:prevIndex] forState:UIControlStateNormal];
+    [button setTitle: [[self.myArray objectAtIndex:prevIndex] frontString] forState:UIControlStateNormal];
+    self.currentFlashcard = [self.myArray objectAtIndex:prevIndex];
     button.frame = CGRectMake(self.flashCardView.frame.origin.x, -self.flashCardView.frame.size.height, self.flashCardView.frame.size.width, self.flashCardView.frame.size.height);
     button.tag = FRONT; 
     

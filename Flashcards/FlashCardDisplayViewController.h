@@ -7,12 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FlashcardModel.h"
 
 @interface FlashCardDisplayViewController : UIViewController
 
 - (IBAction)flipButtonPressed:(UIButton*)sender;
 @property (weak, nonatomic) IBOutlet UIView *flashCardView;
 @property (strong, nonatomic) NSMutableArray *myArray;
+@property (nonatomic, strong) FlashcardModel *currentFlashcard;
 @property (weak, nonatomic) IBOutlet UIButton *nextButton;
 @property (weak, nonatomic) IBOutlet UIButton *previousButton;
 @property (weak, nonatomic) IBOutlet UIButton *lazyModeButton;
