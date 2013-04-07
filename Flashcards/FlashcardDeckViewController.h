@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "FlashCardDisplayViewController.h"
+#import "DeckModel.h"
 
 @interface FlashcardDeckViewController : UIViewController
 

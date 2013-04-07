@@ -13,7 +13,7 @@
 
 @implementation FlashCardDisplayViewController
 @synthesize flashCardView = _flashCardView;
-@synthesize myArray = _myArray;
+@synthesize deck = _deck;
 @synthesize nextButton = _nextButton;
 @synthesize previousButton = _previousButton;
 @synthesize lazyModeButton =  _lazyModeButton;
@@ -24,26 +24,26 @@
     [super viewDidLoad];
     
     //Force setMyArray to be called again after outlets set
-    self.myArray = self.myArray;
+    self.deck = self.deck;
     
 }
-
-- (void)setMyArray:(NSMutableArray *)myArray{
-    _myArray = myArray;
+-(void) setDeck:(DeckModel *)deck{
+    _deck = deck;
     
-    if (_myArray != nil && self.myArray.count > 0) {
-        //Set text of initial card
+    if (_deck !=nil && _deck.flashcards.count > 0) {
         UIButton *currentButton = (UIButton*) self.flashCardView;
         self.flashCardView.hidden = NO;
         [currentButton setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
-        self.currentFlashcard = self.myArray.lastObject;
-        
+        self.currentFlashcard = [self.deck.flashcards lastObject];
+         
         [currentButton setTitle:self.currentFlashcard.frontString forState:UIControlStateNormal];
     }
     else{
         self.flashCardView.hidden = YES;
     }
 
+        
+    
     
 }
 
@@ -117,7 +117,7 @@
     [super viewDidUnload];
 }
 - (IBAction)Next:(id)sender {
-    if (self.myArray == nil || self.myArray.count == 0)
+    if (self.deck == nil || self.deck.flashcards.count == 0)
         return;
     
     UIView *newView;
@@ -127,9 +127,9 @@
      forControlEvents:UIControlEventTouchUpInside];
     button.frame = self.flashCardView.frame;
     [button setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
-    NSUInteger nextIndex = ([self.myArray indexOfObject:self.currentFlashcard]+1)%self.myArray.count;
-    self.currentFlashcard = [self.myArray objectAtIndex:nextIndex];
-    [button setTitle: [[self.myArray objectAtIndex:nextIndex] frontString] forState:UIControlStateNormal];
+    NSUInteger nextIndex = ([self.deck.flashcards indexOfObject:self.currentFlashcard]+1)%self.deck.flashcards.count;
+    self.currentFlashcard = [self.deck.flashcards objectAtIndex:nextIndex];
+    [button setTitle: [[self.deck.flashcards objectAtIndex:nextIndex] frontString] forState:UIControlStateNormal];
     button.tag = FRONT; 
     newView = button;
     
@@ -146,7 +146,7 @@
 }
 
 - (IBAction)Previous:(id)sender {
-    if (self.myArray == nil || self.myArray.count == 0)
+    if (self.deck == nil || self.deck.flashcards.count == 0)
         return;
 
     UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect]; 
@@ -157,15 +157,15 @@
     
     //Move to previous index...check if less than 0 (If so make equal to count - 1)
    // NSUInteger prevIndex = ([self.myArray indexOfObject:currentButton.currentTitle]-1)%self.myArray.count;  
-    NSInteger prevIndex = [self.myArray indexOfObject:self.currentFlashcard];
+    NSInteger prevIndex = [self.deck.flashcards indexOfObject:self.currentFlashcard];
     if (prevIndex-1<0)
-        prevIndex = self.myArray.count-1; 
+        prevIndex = self.deck.flashcards.count-1;
     else 
         prevIndex = prevIndex-1;
     
     [button setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
-    [button setTitle: [[self.myArray objectAtIndex:prevIndex] frontString] forState:UIControlStateNormal];
-    self.currentFlashcard = [self.myArray objectAtIndex:prevIndex];
+    [button setTitle: [[self.deck.flashcards objectAtIndex:prevIndex] frontString] forState:UIControlStateNormal];
+    self.currentFlashcard = [self.deck.flashcards objectAtIndex:prevIndex];
     button.frame = CGRectMake(self.flashCardView.frame.origin.x, -self.flashCardView.frame.size.height, self.flashCardView.frame.size.width, self.flashCardView.frame.size.height);
     button.tag = FRONT; 
     
