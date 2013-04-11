@@ -14,11 +14,12 @@
 @implementation FlashCardDisplayViewController
 @synthesize flashCardView = _flashCardView;
 @synthesize deck = _deck;
+@synthesize currentFlashcard = _currentFlashcard;
 @synthesize nextButton = _nextButton;
 @synthesize previousButton = _previousButton;
 @synthesize lazyModeButton =  _lazyModeButton;
 @synthesize lazyModeTimer = _lazyModeTimer;
-
+@synthesize editButton = _editButton; 
 
 - (void) viewDidLoad {
     [super viewDidLoad];
