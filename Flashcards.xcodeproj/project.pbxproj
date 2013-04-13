@@ -23,7 +23,7 @@
 		E989272516B37108006EA6FF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E989272416B37108006EA6FF /* main.m */; };
 		E989272916B37108006EA6FF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E989272816B37108006EA6FF /* AppDelegate.m */; };
 		E989272C16B37108006EA6FF /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E989272A16B37108006EA6FF /* MainStoryboard.storyboard */; };
-		E989272F16B37108006EA6FF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E989272E16B37108006EA6FF /* ViewController.m */; };
+		E989272F16B37108006EA6FF /* AddFlashCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E989272E16B37108006EA6FF /* AddFlashCardViewController.m */; };
 		E989273716B37108006EA6FF /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E989273616B37108006EA6FF /* SenTestingKit.framework */; };
 		E989273816B37108006EA6FF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E989271816B37108006EA6FF /* UIKit.framework */; };
 		E989273916B37108006EA6FF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E989271A16B37108006EA6FF /* Foundation.framework */; };
@@ -70,8 +70,8 @@
 		E989272716B37108006EA6FF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E989272816B37108006EA6FF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		E989272B16B37108006EA6FF /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		E989272D16B37108006EA6FF /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		E989272E16B37108006EA6FF /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		E989272D16B37108006EA6FF /* AddFlashCardViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddFlashCardViewController.h; sourceTree = "<group>"; };
+		E989272E16B37108006EA6FF /* AddFlashCardViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddFlashCardViewController.m; sourceTree = "<group>"; };
 		E989273516B37108006EA6FF /* FlashcardsTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlashcardsTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E989273616B37108006EA6FF /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		E989273E16B37108006EA6FF /* FlashcardsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FlashcardsTests-Info.plist"; sourceTree = "<group>"; };
@@ -150,8 +150,8 @@
 				E989272A16B37108006EA6FF /* MainStoryboard.storyboard */,
 				E9BB88CA16B8C1160002529B /* FlashCardDisplayViewController.h */,
 				E9BB88CB16B8C1160002529B /* FlashCardDisplayViewController.m */,
-				E989272D16B37108006EA6FF /* ViewController.h */,
-				E989272E16B37108006EA6FF /* ViewController.m */,
+				E989272D16B37108006EA6FF /* AddFlashCardViewController.h */,
+				E989272E16B37108006EA6FF /* AddFlashCardViewController.m */,
 				429DDE5C171081EF00D2C1D6 /* FlashcardDeckViewController.h */,
 				429DDE5D171081EF00D2C1D6 /* FlashcardDeckViewController.m */,
 				8349FC2D1719226F0031E977 /* DeckCell.h */,
@@ -309,7 +309,7 @@
 			files = (
 				E989272516B37108006EA6FF /* main.m in Sources */,
 				E989272916B37108006EA6FF /* AppDelegate.m in Sources */,
-				E989272F16B37108006EA6FF /* ViewController.m in Sources */,
+				E989272F16B37108006EA6FF /* AddFlashCardViewController.m in Sources */,
 				E9BB88CC16B8C1160002529B /* FlashCardDisplayViewController.m in Sources */,
 				83FD146D16CF236400EBC32E /* Model.xcdatamodeld in Sources */,
 				83FD147016CF257600EBC32E /* FlashcardDeck.m in Sources */,

@@ -36,7 +36,7 @@
         deckOne.deckName = @"deckOne";
         deckOne.flashcards = [NSOrderedSet orderedSetWithObjects:[FlashcardModel flashCardWithFront:@"Christopher" Back:@"Is a butt"],[FlashcardModel flashCardWithFront:@"Carly" Back:@"Farr"],[FlashcardModel flashCardWithFront:@"Scotty" Back:@"Z"],nil];
          */
-        
+        [segue.destinationViewController setTitle:[sender name]];
         [segue.destinationViewController setDeck:sender];
     }
         

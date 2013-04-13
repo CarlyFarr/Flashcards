@@ -29,6 +29,16 @@
     self.deck = self.deck;
     
 }
+
+-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if ([segue.identifier isEqualToString:@"addFlashcard"]) {
+        //Setup add flashcard vc
+        [segue.destinationViewController setDelegate:self];
+    }
+    
+    
+}
+
 -(void) setDeck:(FlashcardDeck *)deck{
     _deck = deck;
     
@@ -39,7 +49,7 @@
         [currentButton setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
         self.currentFlashcard = [self.deck.flashcards lastObject];
          
-        [currentButton setTitle:self.currentFlashcard.frontString forState:UIControlStateNormal];
+        [currentButton setTitle:self.currentFlashcard.frontSide forState:UIControlStateNormal];
     }
     else{
         self.flashCardView.hidden = YES;
@@ -58,7 +68,7 @@
          forControlEvents:UIControlEventTouchUpInside];
         button.frame = self.flashCardView.frame;
         [button setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
-        [button setTitle:self.currentFlashcard.frontString forState:UIControlStateNormal];
+        [button setTitle:self.currentFlashcard.frontSide forState:UIControlStateNormal];
         button.tag = FRONT; 
         newView = button;
     }
@@ -69,7 +79,7 @@
         [button addTarget:self action:@selector(flipButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
         button.frame = self.flashCardView.frame;
         [button setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
-        [button setTitle:self.currentFlashcard.backString forState:UIControlStateNormal];
+        [button setTitle:self.currentFlashcard.backSide forState:UIControlStateNormal];
         button.tag = BACK;
         newView = button;
     }
@@ -128,7 +138,7 @@
     [button setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
     NSUInteger nextIndex = ([self.deck.flashcards indexOfObject:self.currentFlashcard]+1)%self.deck.flashcards.count;
     self.currentFlashcard = [self.deck.flashcards objectAtIndex:nextIndex];
-    [button setTitle: [[self.deck.flashcards objectAtIndex:nextIndex] frontString] forState:UIControlStateNormal];
+    [button setTitle: [[self.deck.flashcards objectAtIndex:nextIndex] frontSide] forState:UIControlStateNormal];
     button.tag = FRONT; 
     newView = button;
     
@@ -163,7 +173,7 @@
         prevIndex = prevIndex-1;
     
     [button setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
-    [button setTitle: [[self.deck.flashcards objectAtIndex:prevIndex] frontString] forState:UIControlStateNormal];
+    [button setTitle: [[self.deck.flashcards objectAtIndex:prevIndex] frontSide] forState:UIControlStateNormal];
     self.currentFlashcard = [self.deck.flashcards objectAtIndex:prevIndex];
     button.frame = CGRectMake(self.flashCardView.frame.origin.x, -self.flashCardView.frame.size.height, self.flashCardView.frame.size.width, self.flashCardView.frame.size.height);
     button.tag = FRONT; 
@@ -204,6 +214,8 @@
     }
 }
     
-
+-(IBAction)unwindFromAddFlashcard:(id)sender{
+    
+}
 
 @end
