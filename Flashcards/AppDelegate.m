@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "Flashcard.h"
 #import "FlashcardDeck.h"
+#import "FlashcardDeckViewController.h"
 
 @implementation AppDelegate
 
@@ -34,7 +35,15 @@
             else{
                 //Test that we persisted data between launches
                 
+                UINavigationController* topNav = (UINavigationController*) self.window.rootViewController;
+                if ([topNav.topViewController isKindOfClass:[FlashcardDeckViewController class]]){
+                    FlashcardDeckViewController* deckVC = (FlashcardDeckViewController*) topNav.topViewController;
+                    [deckVC.collectionView reloadData];
+                }
                 
+                
+                
+                /*
                 //Query for all objects...that have a specific value for "frontSide" property
                 NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Flashcard"];
                 fetchRequest.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"backSide" ascending:YES]];
@@ -46,6 +55,7 @@
                 if (!error) {
                     NSLog(@"Persisted Data: %@",fetchedObjects);
                 }
+                 */
             }
         }];
 
@@ -55,32 +65,9 @@
         NSLog(@"Initial Save");
         [self.database saveToURL:self.database.fileURL forSaveOperation:UIDocumentSaveForCreating completionHandler:^(BOOL success) {
             if (success) {
-                //Use database
+                //Maybe do something the first time
+                    //Example deck
                 
-                for (int i = 0; i<5; i++) {
-                    //Add an object
-                    Flashcard *newFlashCard = [NSEntityDescription insertNewObjectForEntityForName:@"Flashcard" inManagedObjectContext:self.database.managedObjectContext];
-                    newFlashCard.frontSide = @"Test String";
-                    newFlashCard.backSide = [NSString stringWithFormat:@"Card Number:%d",i];
-                }
-                
-                //Query for all objects
-                //! means not 
-                NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Flashcard"];
-                fetchRequest.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"backSide" ascending:YES]];
-                
-                NSError *error = nil;
-                NSArray *allObjects = [self.database.managedObjectContext executeFetchRequest:fetchRequest error:&error];
-                if (!error) {
-                    NSLog(@"Objects: %@",allObjects);
-                }
-            
-                //Explictly call save (Not necessary because NS
-                [self.database saveToURL:self.database.fileURL forSaveOperation:UIDocumentSaveForOverwriting completionHandler:^(BOOL success) {
-                    if (success) {
-                        NSLog(@"Saved Database");
-                    }
-                }];
             }
             
             

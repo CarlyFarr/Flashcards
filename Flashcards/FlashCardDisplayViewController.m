@@ -7,6 +7,7 @@
 //
 
 #import "FlashCardDisplayViewController.h"
+#import "AppDelegate.h"
 
 #define FRONT 100
 #define BACK 200
@@ -28,12 +29,13 @@
     self.deck = self.deck;
     
 }
--(void) setDeck:(DeckModel *)deck{
+-(void) setDeck:(FlashcardDeck *)deck{
     _deck = deck;
     
     if (_deck !=nil && _deck.flashcards.count > 0) {
         UIButton *currentButton = (UIButton*) self.flashCardView;
         self.flashCardView.hidden = NO;
+        self.title = _deck.name;
         [currentButton setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
         self.currentFlashcard = [self.deck.flashcards lastObject];
          
@@ -42,10 +44,6 @@
     else{
         self.flashCardView.hidden = YES;
     }
-
-        
-    
-    
 }
 
 

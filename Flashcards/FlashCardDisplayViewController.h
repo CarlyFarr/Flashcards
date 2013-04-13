@@ -8,13 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "FlashcardModel.h"
-#import "DeckModel.h"
+#import "FlashcardDeck.h"
 
 @interface FlashCardDisplayViewController : UIViewController
 
 - (IBAction)flipButtonPressed:(UIButton*)sender;
 @property (weak, nonatomic) IBOutlet UIView *flashCardView;
-@property (strong, nonatomic) DeckModel *deck;
+@property (strong, nonatomic) FlashcardDeck *deck;
 @property (nonatomic, strong) FlashcardModel *currentFlashcard;
 @property (weak, nonatomic) IBOutlet UIButton *nextButton;
 @property (weak, nonatomic) IBOutlet UIButton *previousButton;
