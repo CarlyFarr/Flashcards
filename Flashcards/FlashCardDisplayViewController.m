@@ -84,6 +84,9 @@
         newView = button;
     }
     
+    //set newView to have old mask
+    newView.autoresizingMask = self.flashCardView.autoresizingMask;
+    
     
     //Flipping direction based on side
     /*
@@ -141,9 +144,10 @@
     [button setTitle: [[self.deck.flashcards objectAtIndex:nextIndex] frontSide] forState:UIControlStateNormal];
     button.tag = FRONT; 
     newView = button;
+    newView.autoresizingMask = self.flashCardView.autoresizingMask;
     
-    [self.view insertSubview:newView belowSubview:self.flashCardView]; 
-        
+    [self.view insertSubview:newView belowSubview:self.flashCardView];
+    
     //Animation to slide newView from 
     [UIView animateWithDuration:.5 animations:^{
         self.flashCardView.frame = CGRectOffset(self.flashCardView.frame, 0, -(self.flashCardView.frame.origin.y + self.flashCardView.frame.size.height));
@@ -176,7 +180,8 @@
     [button setTitle: [[self.deck.flashcards objectAtIndex:prevIndex] frontSide] forState:UIControlStateNormal];
     self.currentFlashcard = [self.deck.flashcards objectAtIndex:prevIndex];
     button.frame = CGRectMake(self.flashCardView.frame.origin.x, -self.flashCardView.frame.size.height, self.flashCardView.frame.size.width, self.flashCardView.frame.size.height);
-    button.tag = FRONT; 
+    button.tag = FRONT;
+    button.autoresizingMask = self.flashCardView.autoresizingMask;
     
     [self.view insertSubview:button aboveSubview:self.flashCardView];
     
