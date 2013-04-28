@@ -13,8 +13,8 @@
 
 @interface Flashcard : NSManagedObject
 
-@property (nonatomic, retain) NSString * frontSide;
-@property (nonatomic, retain) NSString * backSide;
-@property (nonatomic, retain) FlashcardDeck *deck;
+@property (nonatomic, strong) NSString * frontSide;
+@property (nonatomic, strong) NSString * backSide;
+@property (nonatomic, strong) FlashcardDeck *deck;
 
 @end

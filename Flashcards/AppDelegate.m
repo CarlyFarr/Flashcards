@@ -16,6 +16,7 @@
 @synthesize window = _window;
 @synthesize database = _database;
 
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
@@ -40,22 +41,6 @@
                     FlashcardDeckViewController* deckVC = (FlashcardDeckViewController*) topNav.topViewController;
                     [deckVC.collectionView reloadData];
                 }
-                
-                
-                
-                /*
-                //Query for all objects...that have a specific value for "frontSide" property
-                NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Flashcard"];
-                fetchRequest.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"backSide" ascending:YES]];
-                fetchRequest.predicate = [NSPredicate predicateWithFormat:@"frontSide == %@",@"Test String"];
-                
-                //Execute fetch request
-                NSError *error = nil;
-                NSArray *fetchedObjects = [self.database.managedObjectContext executeFetchRequest:fetchRequest error:&error];
-                if (!error) {
-                    NSLog(@"Persisted Data: %@",fetchedObjects);
-                }
-                 */
             }
         }];
 
@@ -69,8 +54,6 @@
                     //Example deck
                 
             }
-            
-            
             
         }];
     }    return YES;

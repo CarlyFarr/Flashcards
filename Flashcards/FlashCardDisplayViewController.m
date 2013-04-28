@@ -46,7 +46,7 @@
         UIButton *currentButton = (UIButton*) self.flashCardView;
         self.flashCardView.hidden = NO;
         self.title = _deck.name;
-        [currentButton setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+        [currentButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         self.currentFlashcard = [self.deck.flashcards lastObject];
          
         [currentButton setTitle:self.currentFlashcard.frontSide forState:UIControlStateNormal];
@@ -67,7 +67,7 @@
                    action:@selector(flipButtonPressed:)
          forControlEvents:UIControlEventTouchUpInside];
         button.frame = self.flashCardView.frame;
-        [button setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+        [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [button setTitle:self.currentFlashcard.frontSide forState:UIControlStateNormal];
         button.tag = FRONT; 
         newView = button;
@@ -78,7 +78,7 @@
         [button setBackgroundImage:[UIImage imageNamed:@"flashcardImage.jpg"] forState:UIControlStateNormal];
         [button addTarget:self action:@selector(flipButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
         button.frame = self.flashCardView.frame;
-        [button setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+        [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [button setTitle:self.currentFlashcard.backSide forState:UIControlStateNormal];
         button.tag = BACK;
         newView = button;
@@ -135,7 +135,7 @@
                action:@selector(flipButtonPressed:)
      forControlEvents:UIControlEventTouchUpInside];
     button.frame = self.flashCardView.frame;
-    [button setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+    [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     NSUInteger nextIndex = ([self.deck.flashcards indexOfObject:self.currentFlashcard]+1)%self.deck.flashcards.count;
     self.currentFlashcard = [self.deck.flashcards objectAtIndex:nextIndex];
     [button setTitle: [[self.deck.flashcards objectAtIndex:nextIndex] frontSide] forState:UIControlStateNormal];
@@ -172,7 +172,7 @@
     else 
         prevIndex = prevIndex-1;
     
-    [button setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+    [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [button setTitle: [[self.deck.flashcards objectAtIndex:prevIndex] frontSide] forState:UIControlStateNormal];
     self.currentFlashcard = [self.deck.flashcards objectAtIndex:prevIndex];
     button.frame = CGRectMake(self.flashCardView.frame.origin.x, -self.flashCardView.frame.size.height, self.flashCardView.frame.size.width, self.flashCardView.frame.size.height);
