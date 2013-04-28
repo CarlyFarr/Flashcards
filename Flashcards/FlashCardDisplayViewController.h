@@ -7,15 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "FlashcardModel.h"
-#import "DeckModel.h"
+#import "Flashcard.h"
+#import "FlashcardDeck.h"
+#import "AddFlashCardViewController.h"
 
-@interface FlashCardDisplayViewController : UIViewController
+@interface FlashCardDisplayViewController : UIViewController <AddFlashCardDelegate>
 
 - (IBAction)flipButtonPressed:(UIButton*)sender;
 @property (weak, nonatomic) IBOutlet UIView *flashCardView;
-@property (strong, nonatomic) DeckModel *deck;
-@property (nonatomic, strong) FlashcardModel *currentFlashcard;
+@property (strong, nonatomic) FlashcardDeck *deck;
+@property (nonatomic, strong) Flashcard *currentFlashcard;
 @property (weak, nonatomic) IBOutlet UIButton *nextButton;
 @property (weak, nonatomic) IBOutlet UIButton *previousButton;
 @property (weak, nonatomic) IBOutlet UIButton *lazyModeButton;

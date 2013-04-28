@@ -7,6 +7,7 @@
 //
 
 #import "FlashCardDisplayViewController.h"
+#import "AppDelegate.h"
 
 #define FRONT 100
 #define BACK 200
@@ -14,11 +15,12 @@
 @implementation FlashCardDisplayViewController
 @synthesize flashCardView = _flashCardView;
 @synthesize deck = _deck;
+@synthesize currentFlashcard = _currentFlashcard;
 @synthesize nextButton = _nextButton;
 @synthesize previousButton = _previousButton;
 @synthesize lazyModeButton =  _lazyModeButton;
 @synthesize lazyModeTimer = _lazyModeTimer;
-
+@synthesize editButton = _editButton; 
 
 - (void) viewDidLoad {
     [super viewDidLoad];
@@ -27,7 +29,17 @@
     self.deck = self.deck;
     
 }
--(void) setDeck:(DeckModel *)deck{
+
+-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if ([segue.identifier isEqualToString:@"addFlashcard"]) {
+        //Setup add flashcard vc
+        [segue.destinationViewController setDelegate:self];
+    }
+    
+    
+}
+
+-(void) setDeck:(FlashcardDeck *)deck{
     _deck = deck;
     
     if (_deck !=nil && _deck.flashcards.count > 0) {
@@ -36,15 +48,11 @@
         [currentButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         self.currentFlashcard = [self.deck.flashcards lastObject];
          
-        [currentButton setTitle:self.currentFlashcard.frontString forState:UIControlStateNormal];
+        [currentButton setTitle:self.currentFlashcard.frontSide forState:UIControlStateNormal];
     }
     else{
         self.flashCardView.hidden = YES;
     }
-
-        
-    
-    
 }
 
 
@@ -129,7 +137,7 @@
     [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     NSUInteger nextIndex = ([self.deck.flashcards indexOfObject:self.currentFlashcard]+1)%self.deck.flashcards.count;
     self.currentFlashcard = [self.deck.flashcards objectAtIndex:nextIndex];
-    [button setTitle: [[self.deck.flashcards objectAtIndex:nextIndex] frontString] forState:UIControlStateNormal];
+    [button setTitle: [[self.deck.flashcards objectAtIndex:nextIndex] frontSide] forState:UIControlStateNormal];
     button.tag = FRONT; 
     newView = button;
     
@@ -205,6 +213,8 @@
     }
 }
     
-
+-(IBAction)unwindFromAddFlashcard:(id)sender{
+    
+}
 
 @end

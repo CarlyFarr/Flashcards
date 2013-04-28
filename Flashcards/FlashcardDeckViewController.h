@@ -10,6 +10,11 @@
 #import "FlashCardDisplayViewController.h"
 #import "DeckModel.h"
 
-@interface FlashcardDeckViewController : UIViewController
+@interface FlashcardDeckViewController : UICollectionViewController <NSFetchedResultsControllerDelegate,UIAlertViewDelegate>
+
+@property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
+@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+
+- (IBAction)addDeck:(id)sender;
 
 @end

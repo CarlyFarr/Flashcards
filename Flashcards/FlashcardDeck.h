@@ -13,14 +13,14 @@
 @interface FlashcardDeck : NSManagedObject
 
 @property (nonatomic, retain) NSString * name;
-@property (nonatomic, retain) NSSet *flashcards;
+@property (nonatomic, retain) NSOrderedSet *flashcards;
 @end
 
 @interface FlashcardDeck (CoreDataGeneratedAccessors)
 
 - (void)addFlashcardsObject:(NSManagedObject *)value;
 - (void)removeFlashcardsObject:(NSManagedObject *)value;
-- (void)addFlashcards:(NSSet *)values;
-- (void)removeFlashcards:(NSSet *)values;
+- (void)addFlashcards:(NSOrderedSet *)values;
+- (void)removeFlashcards:(NSOrderedSet *)values;
 
 @end
