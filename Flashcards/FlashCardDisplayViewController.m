@@ -45,6 +45,7 @@
     if (_deck !=nil && _deck.flashcards.count > 0) {
         UIButton *currentButton = (UIButton*) self.flashCardView;
         self.flashCardView.hidden = NO;
+        self.title = _deck.name;
         [currentButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         self.currentFlashcard = [self.deck.flashcards lastObject];
          
@@ -67,7 +68,7 @@
          forControlEvents:UIControlEventTouchUpInside];
         button.frame = self.flashCardView.frame;
         [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-        [button setTitle:self.currentFlashcard.frontString forState:UIControlStateNormal];
+        [button setTitle:self.currentFlashcard.frontSide forState:UIControlStateNormal];
         button.tag = FRONT; 
         newView = button;
     }
@@ -78,7 +79,7 @@
         [button addTarget:self action:@selector(flipButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
         button.frame = self.flashCardView.frame;
         [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-        [button setTitle:self.currentFlashcard.backString forState:UIControlStateNormal];
+        [button setTitle:self.currentFlashcard.backSide forState:UIControlStateNormal];
         button.tag = BACK;
         newView = button;
     }
@@ -172,7 +173,7 @@
         prevIndex = prevIndex-1;
     
     [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [button setTitle: [[self.deck.flashcards objectAtIndex:prevIndex] frontString] forState:UIControlStateNormal];
+    [button setTitle: [[self.deck.flashcards objectAtIndex:prevIndex] frontSide] forState:UIControlStateNormal];
     self.currentFlashcard = [self.deck.flashcards objectAtIndex:prevIndex];
     button.frame = CGRectMake(self.flashCardView.frame.origin.x, -self.flashCardView.frame.size.height, self.flashCardView.frame.size.width, self.flashCardView.frame.size.height);
     button.tag = FRONT; 
