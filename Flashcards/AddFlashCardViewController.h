@@ -22,6 +22,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *front;
 
 @property (nonatomic,weak) id<AddFlashCardDelegate> delegate;
+
 - (IBAction)saveButtonPressed:(id)sender;
 - (IBAction)cancelButtonPressed:(id)sender;
 @end
