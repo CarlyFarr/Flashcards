@@ -16,7 +16,7 @@
 - (IBAction)flipButtonPressed:(UIButton*)sender;
 @property (weak, nonatomic) IBOutlet UIView *flashCardView;
 @property (strong, nonatomic) FlashcardDeck *deck;
-@property (nonatomic, strong) Flashcard *currentFlashcard;
+@property (nonatomic, strong) Flashcard *currentFlashcard;//always set to flashcard thats visible on screen
 @property (weak, nonatomic) IBOutlet UIButton *nextButton;
 @property (weak, nonatomic) IBOutlet UIButton *previousButton;
 @property (weak, nonatomic) IBOutlet UIButton *lazyModeButton;

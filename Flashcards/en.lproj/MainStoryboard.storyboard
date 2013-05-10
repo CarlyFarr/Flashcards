@@ -42,6 +42,21 @@
                                 <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="PuR-rp-0UE">
+                                <rect key="frame" x="455" y="276" width="49" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Pic">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="frontPicButtonPressed:" destination="gf8-nK-hpC" eventType="touchUpInside" id="raa-t0-STC"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                     </view>
@@ -197,7 +212,7 @@
                                 </state>
                                 <connections>
                                     <action selector="editButtonPressed:" destination="jkK-I7-P71" eventType="touchUpInside" id="tFG-mJ-c6V"/>
-                                    <segue destination="qe3-A1-EKS" kind="modal" identifier="editSegue" modalPresentationStyle="formSheet" id="TY2-Nj-QwT"/>
+                                    <segue destination="qe3-A1-EKS" kind="modal" identifier="editFlashcard" modalPresentationStyle="formSheet" id="TY2-Nj-QwT"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -252,12 +267,12 @@
                                     <navigationItem title="Edit Flashcard" id="j0M-ss-3es">
                                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="eRk-8f-Pr2">
                                             <connections>
-                                                <action selector="cancelButtonPressed:" destination="qe3-A1-EKS" id="ALm-Li-xUd"/>
+                                                <action selector="cancelButtonPressed:" destination="qe3-A1-EKS" id="YOt-PV-83b"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="abm-zd-cuD">
                                             <connections>
-                                                <action selector="saveButtonPressed:" destination="qe3-A1-EKS" id="GKZ-30-Uw8"/>
+                                                <action selector="saveButtonPressed:" destination="qe3-A1-EKS" id="e1C-Mh-AvW"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -280,8 +295,8 @@
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="BeT-Ye-UxG"/>
                     <connections>
-                        <outlet property="back" destination="0rV-hd-nCH" id="5bg-9Y-vLD"/>
-                        <outlet property="front" destination="h94-PL-YgF" id="06I-3S-15A"/>
+                        <outlet property="backSide" destination="0rV-hd-nCH" id="jDB-Ln-Lyt"/>
+                        <outlet property="frontSide" destination="h94-PL-YgF" id="pKh-V3-ZWD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OLf-9W-2ZS" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -292,6 +307,71 @@
     <resources>
         <image name="flashcardImage.jpg" width="272" height="185"/>
     </resources>
+    <classes>
+        <class className="AddFlashCardViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AddFlashCardViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="backPicButtonPressed:"/>
+                <relationship kind="action" name="cancelButtonPressed:"/>
+                <relationship kind="action" name="frontPicButtonPressed:"/>
+                <relationship kind="action" name="saveButtonPressed:"/>
+                <relationship kind="outlet" name="back" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="front" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="DeckCell" superclassName="UICollectionViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DeckCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="nameLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="EditFlashCardViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/EditFlashCardViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="cancelButtonPressed:"/>
+                <relationship kind="action" name="saveButtonPressed:"/>
+                <relationship kind="outlet" name="backSide" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="frontSide" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="FlashCardDisplayViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FlashCardDisplayViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="Next:"/>
+                <relationship kind="action" name="Previous:"/>
+                <relationship kind="action" name="editButtonPressed:"/>
+                <relationship kind="action" name="flipButtonPressed:" candidateClass="UIButton"/>
+                <relationship kind="action" name="lazyModePressed:"/>
+                <relationship kind="action" name="unwindFromAddFlashcard:"/>
+                <relationship kind="outlet" name="editButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="flashCardView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="lazyModeButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="nextButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="previousButton" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="FlashcardDeckViewController" superclassName="UICollectionViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FlashcardDeckViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="addDeck:"/>
+            </relationships>
+        </class>
+        <class className="UICollectionReusableView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionReusableView.h"/>
+        </class>
+        <class className="UICollectionViewCell" superclassName="UICollectionReusableView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewCell.h"/>
+        </class>
+        <class className="UICollectionViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewController.h"/>
+        </class>
+        <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
+        </class>
+        <class className="UICollectionViewLayout" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewLayout.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>

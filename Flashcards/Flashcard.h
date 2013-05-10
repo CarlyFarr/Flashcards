@@ -16,5 +16,6 @@
 @property (nonatomic, strong) NSString * frontSide;
 @property (nonatomic, strong) NSString * backSide;
 @property (nonatomic, strong) FlashcardDeck *deck;
+@property (nonatomic, strong) NSData* frontImage;
 
 @end

@@ -10,6 +10,7 @@
 #import "Flashcard.h"
 
 @implementation AddFlashCardViewController
+@synthesize delegate = _delegate;
 
 - (void)didReceiveMemoryWarning
 {
@@ -27,6 +28,24 @@
     
 }
 
+- (IBAction)frontPicButtonPressed:(id)sender {
+    if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]){
+        UIImagePickerController* picker = [[UIImagePickerController alloc] init];
+        picker.mediaTypes = @[(NSString*)kUTTypeImage];
+        
+        self.cameraPopover = [[UIPopoverController alloc] initWithContentViewController:picker];
+        [self.cameraPopover presentPopoverFromRect:[sender frame] inView:self.view permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+    }
+}
+- (void) imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
+    //Get image out of dict
+    self.frontImage = [info objectForKey:UIImagePickerControllerEditedImage];
+    
+    //Do something
+    
+}
+- (IBAction)backPicButtonPressed:(id)sender {
+}
 
 - (IBAction)saveButtonPressed:(id)sender {
     //Create new flashcard
@@ -34,6 +53,7 @@
     newCard.deck = self.delegate.deck;
     newCard.frontSide = self.front.text;
     newCard.backSide = self.back.text;
+    newCard.frontImage = UIImagePNGRepresentation(self.frontImage);
     
     self.delegate.deck = self.delegate.deck; //This is cheating....don't do this (again)
     

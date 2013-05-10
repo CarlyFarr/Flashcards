@@ -8,6 +8,7 @@
 
 #import "FlashCardDisplayViewController.h"
 #import "AppDelegate.h"
+#import "EditFlashCardViewController.h"
 
 #define FRONT 100
 #define BACK 200
@@ -28,6 +29,17 @@
     //Force setMyArray to be called again after outlets set
     self.deck = self.deck;
     
+    //Register for notifcations when deck changes
+    [[NSNotificationCenter defaultCenter] addObserverForName:NSManagedObjectContextObjectsDidChangeNotification object:self.deck.managedObjectContext queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *note) {
+        //This gets called when this notification gets posted
+        UIButton* flashcardButton = (UIButton*) self.flashCardView;
+        if (flashcardButton.tag == FRONT)
+            [flashcardButton setTitle:self.currentFlashcard.frontSide forState:UIControlStateNormal];
+        else
+            [flashcardButton setTitle:self.currentFlashcard.backSide forState:UIControlStateNormal];
+
+    }];
+    
 }
 
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
@@ -35,7 +47,9 @@
         //Setup add flashcard vc
         [segue.destinationViewController setDelegate:self];
     }
-    
+    else if ([segue.identifier isEqualToString:@"editFlashcard"]) {
+        [segue.destinationViewController setFlashcard:self.currentFlashcard];
+    }
     
 }
 
@@ -125,6 +139,9 @@
     }];
 }
 - (void)viewDidUnload {
+    //Unregister for all notifications before we are deleted
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    
     [self setFlashCardView:nil];
     [self setNextButton:nil];
     [self setPreviousButton:nil];

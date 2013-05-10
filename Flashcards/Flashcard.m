@@ -13,6 +13,7 @@
 @implementation Flashcard
 
 @dynamic frontSide;
+@dynamic frontImage;
 @dynamic backSide;
 @dynamic deck;
 

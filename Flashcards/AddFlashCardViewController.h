@@ -17,11 +17,16 @@
 @end
 
 
-@interface AddFlashCardViewController: UIViewController
+@interface AddFlashCardViewController: UIViewController <UIImagePickerControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *back;
 @property (weak, nonatomic) IBOutlet UITextField *front;
+@property (nonatomic, strong) UIImage *frontImage;
+
+@property (nonatomic,strong) UIPopoverController* cameraPopover;
 
 @property (nonatomic,weak) id<AddFlashCardDelegate> delegate;
+- (IBAction)frontPicButtonPressed:(id)sender;
+- (IBAction)backPicButtonPressed:(id)sender;
 
 - (IBAction)saveButtonPressed:(id)sender;
 - (IBAction)cancelButtonPressed:(id)sender;

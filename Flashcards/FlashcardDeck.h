@@ -13,7 +13,7 @@
 @interface FlashcardDeck : NSManagedObject
 
 @property (nonatomic, retain) NSString * name;
-@property (nonatomic, retain) NSOrderedSet *flashcards;
+@property (nonatomic, strong) NSOrderedSet *flashcards;
 @end
 
 @interface FlashcardDeck (CoreDataGeneratedAccessors)

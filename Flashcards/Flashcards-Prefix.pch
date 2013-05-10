@@ -14,4 +14,5 @@
     #import <CoreData/CoreData.h>
     #import <CoreGraphics/CoreGraphics.h>
     #import <QuartzCore/QuartzCore.h>
+    #import <MobileCoreServices/MobileCoreServices.h>
 #endif

@@ -2,6 +2,7 @@
 <model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="2061" systemVersion="12D78" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Flashcard" representedClassName="Flashcard" syncable="YES">
         <attribute name="backSide" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="frontImage" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
         <attribute name="frontSide" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="deck" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="FlashcardDeck" inverseName="flashcards" inverseEntity="FlashcardDeck" syncable="YES"/>
     </entity>
@@ -10,7 +11,7 @@
         <relationship name="flashcards" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Flashcard" inverseName="deck" inverseEntity="Flashcard" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Flashcard" positionX="-2142" positionY="-3483" width="128" height="88"/>
+        <element name="Flashcard" positionX="-2142" positionY="-3483" width="128" height="103"/>
         <element name="FlashcardDeck" positionX="-2466" positionY="-3618" width="128" height="73"/>
     </elements>
 </model>

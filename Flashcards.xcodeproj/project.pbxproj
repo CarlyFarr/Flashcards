@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		424EF657173CA32A0093F970 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 424EF656173CA32A0093F970 /* MobileCoreServices.framework */; };
 		4285B32B1711F20000793861 /* DeckModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4285B32A1711F20000793861 /* DeckModel.m */; };
 		429DDE5B170FDBE600D2C1D6 /* FlashcardModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 429DDE5A170FDBE600D2C1D6 /* FlashcardModel.m */; };
 		429DDE5E171081EF00D2C1D6 /* FlashcardDeckViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 429DDE5D171081EF00D2C1D6 /* FlashcardDeckViewController.m */; };
@@ -45,6 +46,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		424EF656173CA32A0093F970 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		4285B3291711F20000793861 /* DeckModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeckModel.h; sourceTree = "<group>"; };
 		4285B32A1711F20000793861 /* DeckModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeckModel.m; sourceTree = "<group>"; };
 		429DDE59170FDBE600D2C1D6 /* FlashcardModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlashcardModel.h; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				424EF657173CA32A0093F970 /* MobileCoreServices.framework in Frameworks */,
 				42C3116F16D4671900923D83 /* QuartzCore.framework in Frameworks */,
 				83FD147516CF265100EBC32E /* CoreData.framework in Frameworks */,
 				E989271916B37108006EA6FF /* UIKit.framework in Frameworks */,
@@ -134,6 +137,7 @@
 		E989271716B37108006EA6FF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				424EF656173CA32A0093F970 /* MobileCoreServices.framework */,
 				42C3116E16D4671900923D83 /* QuartzCore.framework */,
 				83FD147416CF265100EBC32E /* CoreData.framework */,
 				E989271816B37108006EA6FF /* UIKit.framework */,
