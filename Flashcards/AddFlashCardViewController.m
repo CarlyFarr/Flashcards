@@ -20,13 +20,15 @@
 
 #pragma mark - View lifecycle
 
-- (void)viewDidLoad
+- (void)viewDidLoa
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
-    
 }
+
+BOOL isFront;
+    
 
 - (IBAction)frontPicButtonPressed:(id)sender {
     if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]){
@@ -35,17 +37,34 @@
         
         self.cameraPopover = [[UIPopoverController alloc] initWithContentViewController:picker];
         [self.cameraPopover presentPopoverFromRect:[sender frame] inView:self.view permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+        
+        isFront = YES;
     }
 }
 - (void) imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
     //Get image out of dict
-    self.frontImage = [info objectForKey:UIImagePickerControllerEditedImage];
+    if (isFront == YES) {
+        self.frontImage = [info objectForKey:UIImagePickerControllerEditedImage];
+    }
+    else{
+        self.backImage = [info objectForKey:UIImagePickerControllerEditedImage];
+        }
     
     //Do something
-    
 }
+
 - (IBAction)backPicButtonPressed:(id)sender {
+    if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]){
+        UIImagePickerController* picker = [[UIImagePickerController alloc] init];
+        picker.mediaTypes = @[(NSString*)kUTTypeImage];
+        
+        self.cameraPopover = [[UIPopoverController alloc] initWithContentViewController:picker];
+        [self.cameraPopover presentPopoverFromRect:[sender frame] inView:self.view permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+        
+        isFront = NO;
+    }
 }
+
 
 - (IBAction)saveButtonPressed:(id)sender {
     //Create new flashcard

@@ -21,6 +21,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *back;
 @property (weak, nonatomic) IBOutlet UITextField *front;
 @property (nonatomic, strong) UIImage *frontImage;
+@property (nonatomic, strong) UIImage *backImage;
 
 @property (nonatomic,strong) UIPopoverController* cameraPopover;
 
