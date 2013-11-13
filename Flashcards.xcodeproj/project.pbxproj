@@ -441,6 +441,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Flashcards/Flashcards-Prefix.pch";
 				INFOPLIST_FILE = "Flashcards/Flashcards-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "3307415C-BC0E-40B2-975D-EC6AC5F3DC83";
 				WRAPPER_EXTENSION = app;
@@ -453,6 +454,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Flashcards/Flashcards-Prefix.pch";
 				INFOPLIST_FILE = "Flashcards/Flashcards-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

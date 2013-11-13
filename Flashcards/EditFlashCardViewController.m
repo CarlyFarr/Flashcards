@@ -45,10 +45,10 @@
     self.flashcard.frontSide = self.frontSide.text;
     self.flashcard.backSide = self.backSide.text;
     
-    [self dismissModalViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)cancelButtonPressed:(id)sender {
-    [self dismissModalViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 @end

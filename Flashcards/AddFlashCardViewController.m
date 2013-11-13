@@ -76,10 +76,10 @@ BOOL isFront;
     
     self.delegate.deck = self.delegate.deck; //This is cheating....don't do this (again)
     
-    [self dismissModalViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)cancelButtonPressed:(id)sender {
-    [self dismissModalViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 @end
