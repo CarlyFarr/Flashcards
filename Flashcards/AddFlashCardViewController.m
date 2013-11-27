@@ -31,7 +31,7 @@ BOOL isFront;
     
 
 - (IBAction)frontPicButtonPressed:(id)sender {
-    if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]){
+   // if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]){
         UIImagePickerController* picker = [[UIImagePickerController alloc] init];
         picker.mediaTypes = @[(NSString*)kUTTypeImage];
         
@@ -39,7 +39,7 @@ BOOL isFront;
         [self.cameraPopover presentPopoverFromRect:[sender frame] inView:self.view permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
         
         isFront = YES;
-    }
+//    }
 }
 - (void) imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
     //Get image out of dict

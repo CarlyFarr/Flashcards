@@ -77,7 +77,8 @@
     //Decide what newView will be
     if (self.flashCardView.tag == BACK) {
         //We want to transition to front side
-        UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect]; 
+        UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+        [button setBackgroundImage:[UIImage imageNamed:@"flashcardImage.jpg"] forState:UIControlStateNormal];
         [button addTarget:self
                    action:@selector(flipButtonPressed:)
          forControlEvents:UIControlEventTouchUpInside];
@@ -153,7 +154,8 @@
         return;
     
     UIView *newView;
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect]; 
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [button setBackgroundImage:[UIImage imageNamed:@"flashcardImage.jpg"] forState:UIControlStateNormal];
     [button addTarget:self
                action:@selector(flipButtonPressed:)
      forControlEvents:UIControlEventTouchUpInside];
@@ -183,7 +185,8 @@
     if (self.deck == nil || self.deck.flashcards.count == 0)
         return;
 
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect]; 
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [button setBackgroundImage:[UIImage imageNamed:@"flashcardImage.jpg"] forState:UIControlStateNormal];
     [button addTarget:self
                action:@selector(flipButtonPressed:)
      forControlEvents:UIControlEventTouchUpInside];
